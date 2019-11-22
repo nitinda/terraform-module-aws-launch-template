@@ -25,10 +25,6 @@ From branch : **_terraform-11/master_**
 
 * **_Launch Template (Terraform 11 supported code)_**
 
-From branch : **_terraform-12/master_** *work in progress*
-
-* **_Launch Template (Terraform 12 supported code - work in progres)_**
-
 
 ---
 
@@ -52,7 +48,10 @@ module "<layer>-efs-<AccountID>" {
 
 }
 ```
+
 ---
+
+
 
 ## Inputs
 
@@ -61,10 +60,20 @@ The variables required in order for the module to be successfully called from th
 
 |         **_Variable_**          |        **_Description_**            |   **_Type_**   |
 |---------------------------------|-------------------------------------|----------------|
+| name_prefix                     | Creates a unique name               | string         |
+| description                     | Description of the launch template  | string         |
+| image_id                        | The AMI id                          | string         |
+| ebs_optimized                   | EBS Check                           | string         |
+| block_device_mappings           | Root Volume                         | list of map    |
+| iam_instance_profile            | Instance Role ARN                   | list of map    |
+| vpc_security_group_ids          | Security group ids                  | list           |
+| monitoring                      | Configure Monitoring                | string         |
+| user_data                       | The Base64-encoded user data        | string         |
+| tag_specifications              | The tags to apply to the resources  | list of map    |
+| common_tags                     | Common Tags                         | map            |
 
 
 
-Details are in respective branch.
 
 
 ## Outputs
@@ -74,7 +83,6 @@ Details are in respective branch.
 * **_arn_**
 
 
-Details are in respective branch.
 
 
 ### Usage
