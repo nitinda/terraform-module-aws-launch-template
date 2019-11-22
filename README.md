@@ -52,7 +52,7 @@ module "<layer>-launch-template-<AccountID>" {
   name_prefix            = "ec2-lt-"
   description            = "${var.description}"
   ebs_optimized          = "${var.ebs_optimized}"
-  image_id               = "${data.aws_ami.ami_ecs_node.id}"
+  image_id               = "${data.aws_ami.ami_node.id}"
   monitoring             = "${var.monitoring}"
   common_tags            = "${var.common_tags}"
   vpc_security_group_ids = ["${var.security_group_ids}"]
