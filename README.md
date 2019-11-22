@@ -64,11 +64,11 @@ module "<layer>-launch-template-<AccountID>" {
   tag_specifications    = [
     {
       resource_type = "instance"
-      tags          = "${merge(var.common_tags, map("Name", "${var.source_market_name}-container-services-ecs-shared-services-node-ec2",))}"
+      tags          = "${merge(var.common_tags, map("Name", "ec2-instance",))}"
     },
     {
       resource_type = "volume"
-      tags          = "${merge(var.common_tags, map("Name", "${var.source_market_name}-container-services-ecs-shared-services-node-volume",))}"
+      tags          = "${merge(var.common_tags, map("Name", "ec2-instance-volume",))}"
     }
   ]
 
