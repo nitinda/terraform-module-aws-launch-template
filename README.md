@@ -42,8 +42,8 @@ From branch : **_terraform-11/master_**
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-efs-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
+module "<layer>-launch-template-<AccountID>" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=master"
 
   providers = {
     "aws" = "aws.services"
