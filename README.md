@@ -45,6 +45,33 @@ To use this module, add the following call to your code:
 module "<layer>-efs-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
 
+  providers = {
+    "aws" = "aws.services"
+  }
+
+  name_prefix            = "ec2-lt-"
+  description            = "${var.description}"
+  ebs_optimized          = "${var.ebs_optimized}"
+  image_id               = "${data.aws_ami.ami_ecs_node.id}"
+  monitoring             = "${var.monitoring}"
+  common_tags            = "${var.common_tags}"
+  vpc_security_group_ids = ["${var.security_group_ids}"]
+  user_data              = "${base64encode("${data.template_file.template_data.rendered}")}"
+  iam_instance_profile   = [{
+    name = "${var.instance_profile_name}"
+  }]
+  block_device_mappings = "${var.block_device_mappings}"
+  tag_specifications    = [
+    {
+      resource_type = "instance"
+      tags          = "${merge(var.common_tags, map("Name", "${var.source_market_name}-container-services-ecs-shared-services-node-ec2",))}"
+    },
+    {
+      resource_type = "volume"
+      tags          = "${merge(var.common_tags, map("Name", "${var.source_market_name}-container-services-ecs-shared-services-node-volume",))}"
+    }
+  ]
+
 
 }
 ```
