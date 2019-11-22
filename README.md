@@ -43,7 +43,7 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-launch-template-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=terraform-11/master"
 
   providers = {
     "aws" = "aws.services"
