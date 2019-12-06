@@ -39,6 +39,11 @@ variable "user_data" {
   description = "The Base64-encoded user data to provide when launching the instance."
 }
 
+variable "key_name" {
+  description = "The key name to use for the instance."  
+}
+
+
 variable "tag_specifications" {
   description = "The tags to apply to the resources during launch."
   type        = "list"
