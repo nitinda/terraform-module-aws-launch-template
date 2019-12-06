@@ -3,7 +3,7 @@
 
 ## General
 
-This module may be used to create Launch Template resources in AWS cloud provider..
+This module may be used to create **_Launch Template_** resources in AWS cloud provider..
 
 ---
 
@@ -57,6 +57,7 @@ module "<layer>-launch-template-<AccountID>" {
   common_tags            = "${var.common_tags}"
   vpc_security_group_ids = ["${var.security_group_ids}"]
   user_data              = "${base64encode("${data.template_file.template_data.rendered}")}"
+  key_name               = "${var.key_name}"
   iam_instance_profile   = [{
     name = "${var.instance_profile_name}"
   }]
@@ -71,8 +72,6 @@ module "<layer>-launch-template-<AccountID>" {
       tags          = "${merge(var.common_tags, map("Name", "ec2-instance-volume",))}"
     }
   ]
-
-
 }
 ```
 
@@ -98,6 +97,7 @@ The variables required in order for the module to be successfully called from th
 | user_data                       | The Base64-encoded user data        | string         |
 | tag_specifications              | The tags to apply to the resources  | list of map    |
 | common_tags                     | Common Tags                         | map            |
+| key_name                        | The key name to use                 | string         |
 
 
 

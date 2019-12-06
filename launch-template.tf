@@ -10,4 +10,5 @@ resource "aws_launch_template" "launch_template" {
   user_data              = "${var.user_data}"
   tag_specifications     = "${var.tag_specifications}"
   tags                   = "${var.common_tags}"
+  key_name               = "${var.key_name}"
 }
