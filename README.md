@@ -10,7 +10,7 @@ This module may be used to create **_Launch Template_** resources in AWS cloud p
 
 ## Prerequisites
 
-This module needs Terraform 0.11.10 or newer.
+This module needs **_Terraform 0.11.14_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -83,21 +83,20 @@ module "<layer>-launch-template-<AccountID>" {
 
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
-
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
-| name_prefix                     | Creates a unique name               | string         |
-| description                     | Description of the launch template  | string         |
-| image_id                        | The AMI id                          | string         |
-| ebs_optimized                   | EBS Check                           | string         |
-| block_device_mappings           | Root Volume                         | list of map    |
-| iam_instance_profile            | Instance Role ARN                   | list of map    |
-| vpc_security_group_ids          | Security group ids                  | list           |
-| monitoring                      | Configure Monitoring                | string         |
-| user_data                       | The Base64-encoded user data        | string         |
-| tag_specifications              | The tags to apply to the resources  | list of map    |
-| common_tags                     | Common Tags                         | map            |
-| key_name                        | The key name to use                 | string         |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
+| **_name\_prefix_** | Creates a unique name | string | **_Required_** |
+| **_description_** | Description of the launch template | string | **_Required_** |
+| **_image\_id_** | The AMI id | string | **_Required_** |
+| **_ebs\_optimized_** | EBS Check | string | **_Required_** |
+| **_block\_device\_mappings_** | Root Volume | list of map | **_Required_** |
+| **_iam\_instance\_profile_** | Instance Role ARN | list of map | **_Required_** |
+| **_vpc\_security\_group\_ids_** | Security group ids | list | **_Required_** |
+| **_monitoring_** | Configure Monitoring | string | **_Required_** |
+| **_user\_data_** | The Base64-encoded user data | string | **_Required_** |
+| **_tag\_specifications_** | The tags to apply to the resources  | list of map | **_Required_** |
+| **_common\_tags_** | Common Tags | map | **_Required_** |
+| **_key\_name_** | The key name to use | string | **_Required_** |
 
 
 
