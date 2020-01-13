@@ -109,23 +109,6 @@ In order for the variables to be accessed on module level please use the syntax 
 module.<module_name>.<output_variable_name>
 ```
 
-If an output variable needs to be exposed on root level in order to be accessed through terraform state file follow the steps below:
-
-- Include the syntax above in the network layer output terraform file.
-- Add the code snippet below to the variables/global_variables file.
-
-```tf
-data "terraform_remote_state" "<module_name>" {
-  backend = "s3"
-
-  config {
-    bucket = <bucket_name> (i.e. "s3-webstack-terraform-state")
-    key    = <state_file_relative_path> (i.e. "env:/${terraform.workspace}/4_Networking/terraform.tfstate")
-    region = <bucket_region> (i.e. "eu-central-1")
-  }
-}
-```
-
 - The output variable is able to be accessed through terraform state file using the syntax below:
 
 ```tf
