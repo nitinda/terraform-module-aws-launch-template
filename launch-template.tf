@@ -3,8 +3,9 @@ resource "aws_launch_template" "launch_template" {
   description   = var.description
   image_id      = var.image_id
   ebs_optimized = var.ebs_optimized
+
   dynamic "block_device_mappings" {
-    for_each = var.block_device_mappings
+    for_each = length(keys(var.block_device_mappings)) == 0 ? [] : var.block_device_mappings
     content {
       device_name  = lookup(block_device_mappings.value, "device_name", null)
       no_device    = lookup(block_device_mappings.value, "no_device", null)
@@ -26,16 +27,15 @@ resource "aws_launch_template" "launch_template" {
   }
 
   dynamic "iam_instance_profile" {
-    for_each = [var.iam_instance_profile]
+    for_each = length(keys(var.iam_instance_profile)) == 0 ? [] : [var.iam_instance_profile]
     content {
       arn  = lookup(iam_instance_profile.value, "arn", null)
       name = lookup(iam_instance_profile.value, "name", null)
     }
   }
 
-  vpc_security_group_ids = var.vpc_security_group_ids
   dynamic "monitoring" {
-    for_each = var.monitoring
+    for_each = length(keys(var.monitoring)) == 0 ? [] : [var.monitoring]
     content {
       enabled = lookup(monitoring.value, "enabled", null)
     }
@@ -48,9 +48,10 @@ resource "aws_launch_template" "launch_template" {
       tags          = lookup(tag_specifications.value, "tags", null)
     }
   }
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   user_data = var.user_data
-  tags      = var.common_tags
+  tags      = var.tags
   key_name  = var.key_name
 }
 
