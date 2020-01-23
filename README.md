@@ -79,7 +79,7 @@ _The variables required in order for the module to be successfully called from t
 | **_ebs\_optimized_** | EBS Check | _string_ | **_Required_** |
 | **_block\_device\_mappings_** | Root Volume | _any_ | **_Optional_** |
 | **_iam\_instance\_profile_** | Instance Role ARN | _map(string)_ | **_Required_** |
-| **_vpc\_security\_group\_ids_** | Security group ids | _list(string)_ | **_Required_** |
+| **_vpc\_security\_group\_ids_** | Security group ids | _list(string)_ | **_Optional - (Default [])_** |
 | **_monitoring_** | Configure Monitoring | _map(string)_ | **_Required_** |
 | **_user\_data_** | The Base64-encoded user data | _string_ | **_Optional_** |
 | **_tag\_specifications_** | The tags to apply to the resources  | _any_ | **_Required_** |
