@@ -50,6 +50,12 @@ variable "tag_specifications" {
   type        = any
 }
 
+variable "network_interfaces" {
+  description = "Customize network interfaces to be attached at instance boot time"
+  default     = []
+  type        = any
+}
+
 ## Tags
 variable "tags" {
   description = "A mapping of tags to assign to the launch template"

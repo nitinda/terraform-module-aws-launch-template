@@ -48,6 +48,25 @@ resource "aws_launch_template" "launch_template" {
       tags          = lookup(tag_specifications.value, "tags", null)
     }
   }
+
+  dynamic "network_interfaces" {
+    for_each = var.network_interfaces
+    content {
+      associate_public_ip_address = lookup(network_interfaces.value, "associate_public_ip_address", null)
+      delete_on_termination       = lookup(network_interfaces.value, "delete_on_termination", null)
+      description                 = lookup(network_interfaces.value, "description", null)
+      device_index                = lookup(network_interfaces.value, "device_index", null)
+      ipv4_address_count          = lookup(network_interfaces.value, "ipv4_address_count", null)
+      ipv4_addresses              = lookup(network_interfaces.value, "ipv4_addresses", null)
+      ipv6_address_count          = lookup(network_interfaces.value, "ipv6_address_count", null)
+      ipv6_addresses              = lookup(network_interfaces.value, "ipv6_addresses", null)
+      network_interface_id        = lookup(network_interfaces.value, "network_interface_id", null)
+      private_ip_address          = lookup(network_interfaces.value, "private_ip_address", null)
+      security_groups             = lookup(network_interfaces.value, "security_groups", null)
+      subnet_id                   = lookup(network_interfaces.value, "subnet_id", null)
+    }
+  }
+
   vpc_security_group_ids = var.vpc_security_group_ids
 
   user_data = var.user_data
