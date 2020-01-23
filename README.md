@@ -1,43 +1,37 @@
-# Terraform Module Name: terraform-module-launch-template
+# _Terraform Module : terraform-module-launch-template_
 
 
-## General
+## _General_
 
-This module may be used to create **_Launch Template_** resources in AWS cloud provider..
-
----
-
-
-## Prerequisites
-
-This module needs **_Terraform 0.12.19_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
-
-This module deploys aws services details are in respective feature branches.
+_This module may be used to create_ **_Launch Template_** _resources in AWS cloud provider......_
 
 ---
 
-## Features Branches
 
-Below we are able to check the resources that are being created as part of this module call:
+## _Prerequisites_
+
+_This module needs_ **_Terraform 0.12.19_** _or newer._
+_You can download the latest Terraform version from_ [here](https://www.terraform.io/downloads.html).
+
+_This module deploys aws services details are in respective feature branches._
+
+---
+
+## _Features_
+
+_Below we are able to check the resources that are being created as part of this module call:_
 
 * **_Launch Template_**
 
 
----
-
-## Below are the resources that are launched by this module
-
-* **_Launch Template_**
-
 
 ---
 
-## Usage
+## _Usage_
 
-## Using this repo
+## _Using this repo_
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
 module "launch_template" {
@@ -71,9 +65,9 @@ module "launch_template" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
@@ -92,28 +86,29 @@ The variables required in order for the module to be successfully called from th
 | **_key\_name_** | The key name to use | _string_ | **_Optional_** |
 
 
-## Outputs
+## _Outputs_
 
 * **_latest\_version_**
 * **_id_**
 * **_arn_**
 
 
-Details are in respective branch.
-
 
 ### Usage
-In order for the variables to be accessed on module level please use the syntax below:
+
+_In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
 ```
 
-- The output variable is able to be accessed through terraform state file using the syntax below:
+_The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
-"${data.terraform_remote_state.<module_name>.<output_variable_name>}"
+data.terraform_remote_state.<module_name>.<output_variable_name>
 ```
 
+
 ## Authors
-Module maintained by Module maintained by the - **_Nitin Das_**
+
+_Module maintained by Module maintained by the -_ **_Nitin Das_**
