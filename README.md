@@ -63,6 +63,7 @@ module "launch_template" {
   ]
 }
 ```
+
 ---
 
 ## _Inputs_
@@ -86,6 +87,8 @@ _The variables required in order for the module to be successfully called from t
 | **_key\_name_** | The key name to use | _string_ | **_Optional_** |
 
 
+---
+
 ## _Outputs_
 
 * **_latest\_version_**
@@ -108,6 +111,7 @@ _The output variable is able to be accessed through terraform state file using t
 data.terraform_remote_state.<module_name>.<output_variable_name>
 ```
 
+---
 
 ## _Authors_
 
