@@ -1,111 +1,118 @@
-# Terraform Module Name: terraform-module-launch-template
+# _Terraform Module : terraform-module-launch-template_
 
 
-## General
+## _General_
 
-This module may be used to create **_Launch Template_** resources in AWS cloud provider..
-
----
-
-
-## Prerequisites
-
-This module needs **_Terraform 0.11.14_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
-
-This module deploys aws services details are in respective feature branches.
+_This module may be used to create_ **_Launch Template_** _resources in AWS cloud provider......_
 
 ---
 
-## Features Branches
 
-Below we are able to check the resources that are being created as part of this module call:
+## _Prerequisites_
 
-From branch : **_terraform-11/master_**
+_This module needs_ **_Terraform 0.12.19_** _or newer._
+_You can download the latest Terraform version from_ [here](https://www.terraform.io/downloads.html).
 
-* **_Launch Template (Terraform 11 supported code)_**
-
-From branch : **_terraform-12/master_** *work in progress*
-
-* **_Launch Template (Terraform 12 supported code - work in progres)_**
-
+_This module deploys aws services details are in respective feature branches._
 
 ---
 
-## Below are the resources that are launched by this module
+## _Features_
+
+_Below we are able to check the resources that are being created as part of this module call:_
 
 * **_Launch Template_**
 
 
+
 ---
 
-## Usage
+## _Usage_
 
-## Using this repo
+## _Using this repo_
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
-module "<layer>-launch-template-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=master"
+module "launch_template" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=terraform-12/master"
 
+  providers = {
+    aws = aws.services
+  }
 
+  name_prefix            = "lt-"
+  description            = "EC2 Launch Template"
+  ebs_optimized          = true
+  image_id               = var.image_id
+  monitoring             = { enabled = false }
+  tags                   = var.tags
+  vpc_security_group_ids = [ var.vpc_security_group_ids ]
+  user_data              = base64encode("${data.template_file.template_data.rendered}")
+  iam_instance_profile   = { name = module.iam_instance_profile_ec2.name }
+  block_device_mappings = []
+  tag_specifications    = [
+    {
+      resource_type = "instance"
+      tags          = merge(var.common_tags, map("Name", "demo-ec2-instance",))
+    },
+    {
+      resource_type = "volume"
+      tags          = merge(var.common_tags, map("Name", "demo-ec2-instance-volume",))
+    }
+  ]
 }
 ```
+
 ---
 
-## Inputs
+## _Inputs_
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
-
-
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
+| **_name\_prefix_** | Creates a unique name | _string_ | **_Required_** |
+| **_description_** | Description of the launch template | _string_ | **_Required_** |
+| **_image\_id_** | The AMI id | _string_ | **_Required_** |
+| **_ebs\_optimized_** | EBS Check | _string_ | **_Required_** |
+| **_block\_device\_mappings_** | Root Volume | _any_ | **_Optional_** |
+| **_iam\_instance\_profile_** | Instance Role ARN | _map(string)_ | **_Required_** |
+| **_vpc\_security\_group\_ids_** | Security group ids | _list(string)_ | **_Optional - (Default [])_** |
+| **_monitoring_** | Configure Monitoring | _map(string)_ | **_Required_** |
+| **_user\_data_** | The Base64-encoded user data | _string_ | **_Optional_** |
+| **_tag\_specifications_** | The tags to apply to the resources  | _any_ | **_Required_** |
+| **_tags_** | Common Tags | _map(string)_ | **_Required_** |
+| **_key\_name_** | The key name to use | _string_ | **_Optional_** |
 
-Details are in respective branch.
 
+---
 
-## Outputs
+## _Outputs_
 
 * **_latest\_version_**
 * **_id_**
 * **_arn_**
 
 
-Details are in respective branch.
 
+### _Usage_
 
-### Usage
-In order for the variables to be accessed on module level please use the syntax below:
+_In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
 ```
 
-If an output variable needs to be exposed on root level in order to be accessed through terraform state file follow the steps below:
-
-- Include the syntax above in the network layer output terraform file.
-- Add the code snippet below to the variables/global_variables file.
+_The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
-data "terraform_remote_state" "<module_name>" {
-  backend = "s3"
-
-  config {
-    bucket = <bucket_name> (i.e. "s3-webstack-terraform-state")
-    key    = <state_file_relative_path> (i.e. "env:/${terraform.workspace}/4_Networking/terraform.tfstate")
-    region = <bucket_region> (i.e. "eu-central-1")
-  }
-}
+data.terraform_remote_state.<module_name>.<output_variable_name>
 ```
 
-- The output variable is able to be accessed through terraform state file using the syntax below:
+---
 
-```tf
-"${data.terraform_remote_state.<module_name>.<output_variable_name>}"
-```
+## _Authors_
 
-## Authors
-Module maintained by Module maintained by the - **_Nitin Das_**
+_Module maintained by Module maintained by the -_ **_Nitin Das_**
