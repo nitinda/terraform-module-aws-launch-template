@@ -91,10 +91,15 @@ _The variables required in order for the module to be successfully called from t
 
 ## _Outputs_
 
+### _General_
+
+_This module has the following outputs:_
+
 * **_latest\_version_**
 * **_id_**
 * **_arn_**
 
+---
 
 
 ### _Usage_
