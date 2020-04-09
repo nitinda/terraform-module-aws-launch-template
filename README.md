@@ -97,23 +97,23 @@ _The variables required in order for the module to be successfully called from t
 | **_elastic\_inference\_accelerator_** | _Configuration block containing an <br/>Elastic Inference Accelerator to attach to <br/>the instance_ | _any_ | **_Optional_** | **_[]_** |
 | **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _any_ | **_Optional_** | **_[]_** |
 | **_image\_id_** | _The AMI id_ | _string_ | **_Required_** |
-| **_instance\_initiated\_shutdown\_behavior_** | _Shutdown behavior for the instance_ | _string_ | **_Optional <br/> (Default - stop)_** |
-| **_instance\_market\_options_** | _The market (purchasing) option for the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_instance\_type_** | _The type of the instance_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_kernel\_id_** | _The kernel ID_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_key\_name_** | _The key name to use for the instance_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_license\_specification_** | _A list of license specifications to associate with_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_metadata\_options_** | _Customize the metadata options for the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_monitoring_** | _The monitoring option for the instance. <br/> See Monitoring below for more details_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_network\_interfaces_** | _Customize network interfaces to be <br/> attached at instance boot time_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_placement_** | _The placement of the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_ram\_disk\_id_** | _The ID of the RAM disk_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_security\_group\_names_** | _A list of security group names to associate with_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_vpc\_security\_group\_ids_** | _A list of security group IDs to associate with_ | _list(string)_ | **_Optional <br/> (Default [])_** |
-| **_tag\_specifications_** | _The tags to apply to the resources during launch_  | _any_ | **_Optional <br/> (Default [])_** |
-| **_tags_** | _A mapping of tags to assign to the launch template_ | _map(string)_ | **_Optional <br/> (Default {})_** |
-| **_user\_data_** | _The Base64-encoded user data <br/> to provide when launching the instance_ | _string_ | **_Optional <br/> (Default null)_** |
-| **_hibernation\_options_** | _The hibernation options for the instance_ | _any_ | **_Optional <br/> (Default [])_** |
+| **_instance\_initiated\_shutdown\_behavior_** | _Shutdown behavior for the instance_ | _string_ | **_Optional_** | **_stop_** |
+| **_instance\_market\_options_** | _The market (purchasing) option for the instance_ | _any_ | **_Optional_** | **_[]_** |
+| **_instance\_type_** | _The type of the instance_ | _string_ | **_Optional_** | **_null_** |
+| **_kernel\_id_** | _The kernel ID_ | _string_ | **_Optional_** | **_null_** |
+| **_key\_name_** | _The key name to use for the instance_ | _string_ | **_Optional_** | **_null_** |
+| **_license\_specification_** | _A list of license specifications to associate with_ | _any_ | **_Optional_** | **_[]_** |
+| **_metadata\_options_** | _Customize the metadata options for the instance_ | _any_ | **_Optional_** | **_[]_** |
+| **_monitoring_** | _The monitoring option for the instance. <br/> See Monitoring below for more details_ | _any_ | **_Optional_** | **_[]_** |
+| **_network\_interfaces_** | _Customize network interfaces to be <br/> attached at instance boot time_ | _any_ | **_Optional_** | **_[]_** |
+| **_placement_** | _The placement of the instance_ | _any_ | **_Optional_** | **_[]_** |
+| **_ram\_disk\_id_** | _The ID of the RAM disk_ | _string_ | **_Optional_** | **_null_** |
+| **_security\_group\_names_** | _A list of security group names to associate with_ | _any_ | **_Optional_** | **_[]_** |
+| **_vpc\_security\_group\_ids_** | _A list of security group IDs to associate with_ | _list(string)_ | **_Optional_** | **_[]_** |
+| **_tag\_specifications_** | _The tags to apply to the resources during launch_  | _any_ | **_Optional_** | **_[]_** |
+| **_tags_** | _A mapping of tags to assign to the launch template_ | _map(string)_ | **_Optional_** | **_{}_** |
+| **_user\_data_** | _The Base64-encoded user data <br/> to provide when launching the instance_ | _string_ | **_Optional_** | **_[]_** |
+| **_hibernation\_options_** | _The hibernation options for the instance_ | _any_ | **_Optional_** | **_[]_** |
 
 
 ---
