@@ -85,8 +85,8 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
 |:----|:----|-----:|-----:|-----:|
-| **_name_** | _The name of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_name_** | _The name of the launch template_ | _string_ | **_Optional_** | **_null_** |
+| **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
 | **_description_** | _Description of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
 | **_block\_device\_mappings_** | _Specify volumes to attach to the instance besides <br/> the volumes specified by the AMI_ | _any_ | **_Optional <br/> (Default - [])_** |
 | **_capacity\_reservation\_specification_** | _Targeting for EC2 capacity reservations_ | _any_ | **_Optional <br/> (Default - [])_** |
