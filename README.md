@@ -83,8 +83,8 @@ module "launch_template" {
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
-|:----|:----|-----:|-----:|
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|-----:|-----:|
 | **_name_** | _The name of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
 | **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional <br/> (Default - null)_** |
 | **_description_** | _Description of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
