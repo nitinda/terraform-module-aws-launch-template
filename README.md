@@ -87,15 +87,15 @@ _The variables required in order for the module to be successfully called from t
 |:----|:----|-----:|-----:|-----:|
 | **_name_** | _The name of the launch template_ | _string_ | **_Optional_** | **_null_** |
 | **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
-| **_description_** | _Description of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_block\_device\_mappings_** | _Specify volumes to attach to the instance besides <br/> the volumes specified by the AMI_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_capacity\_reservation\_specification_** | _Targeting for EC2 capacity reservations_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_cpu\_options_** | _The CPU options for the instance | _any_ | **_Optional <br/> (Default - [])_** |
-| **_credit\_specification_** | _Customize the credit specification of the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_disable\_api\_termination_** | _If true, enables EC2 Instance <br/> Termination Protection_ | _boolean_ | **_Optional<br/>(Default - false)_** |
-| **_ebs\_optimized_** | _If true, the launched_ | _boolean_ | **_Optional<br/>(Default - [])_** |
-| **_elastic\_inference\_accelerator_** | _Configuration block containing an Elastic <br/> Inference Accelerator to attach to the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
-| **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_description_** | _Description of the launch template_ | _string_ | **_Optional_** | **_null_** |
+| **_block\_device\_mappings_** | _Specify volumes to attach to the instance besides <br/> the volumes specified by the AMI_ | _any_ | **_Optional_** | **_[]_** |
+| **_capacity\_reservation\_specification_** | _Targeting for EC2 capacity reservations_ | _any_ | **_Optional_** | **_[]_** |
+| **_cpu\_options_** | _The CPU options for the instance | _any_ | **_Optional_** | **_[]_** |
+| **_credit\_specification_** | _Customize the credit specification of the instance_ | _any_ | **_Optional_** | **_[]_** |
+| **_disable\_api\_termination_** | _If true, enables EC2 Instance <br/> Termination Protection_ | _boolean_ | **_Optional_** | **_false_** |
+| **_ebs\_optimized_** | _If true, the launched instance will be EBS Optimized_ | _boolean_ | **_Optional_** | **_[]_** |
+| **_elastic\_inference\_accelerator_** | _Configuration block containing an Elastic <br/> Inference Accelerator to attach to the instance_ | _any_ | **_Optional_** | **_[]_** |
+| **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _any_ | **_Optional_** | **_[]_** |
 | **_image\_id_** | _The AMI id_ | _string_ | **_Required_** |
 | **_instance\_initiated\_shutdown\_behavior_** | _Shutdown behavior for the instance_ | _string_ | **_Optional <br/> (Default - stop)_** |
 | **_instance\_market\_options_** | _The market (purchasing) option for the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
