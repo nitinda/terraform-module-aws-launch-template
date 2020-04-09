@@ -1,5 +1,17 @@
 # _Terraform Module : terraform-module-launch-template_
+_Terraform Module for_ **_AWS Launch Template_**
 
+<!--BEGIN STABILITY BANNER-->
+---
+
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+> **_This is a stable example. It should successfully build out of the box_**
+>
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
+
+---
+<!--END STABILITY BANNER-->
 
 ## _General_
 
@@ -73,18 +85,35 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
 |:----|:----|-----:|-----:|
-| **_name\_prefix_** | Creates a unique name | _string_ | **_Required_** |
-| **_description_** | Description of the launch template | _string_ | **_Required_** |
-| **_image\_id_** | The AMI id | _string_ | **_Required_** |
-| **_ebs\_optimized_** | EBS Check | _string_ | **_Required_** |
-| **_block\_device\_mappings_** | Root Volume | _any_ | **_Optional_** |
-| **_iam\_instance\_profile_** | Instance Role ARN | _map(string)_ | **_Required_** |
-| **_vpc\_security\_group\_ids_** | Security group ids | _list(string)_ | **_Optional - (Default [])_** |
-| **_monitoring_** | Configure Monitoring | _map(string)_ | **_Required_** |
-| **_user\_data_** | The Base64-encoded user data | _string_ | **_Optional_** |
-| **_tag\_specifications_** | The tags to apply to the resources  | _any_ | **_Required_** |
-| **_tags_** | Common Tags | _map(string)_ | **_Required_** |
-| **_key\_name_** | The key name to use | _string_ | **_Optional_** |
+| **_name_** | _The name of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_description_** | _Description of the launch template_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_block\_device\_mappings_** | _Specify volumes to attach to the instance besides <br/> the volumes specified by the AMI_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_capacity\_reservation\_specification_** | _Targeting for EC2 capacity reservations_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_cpu\_options_** | _The CPU options for the instance | _any_ | **_Optional <br/> (Default - [])_** |
+| **_credit\_specification_** | _Customize the credit specification of the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_disable\_api\_termination_** | _If true, enables EC2 Instance Termination Protection_ | _boolean_ | **_Optional <br/> (Default - false)_** |
+| **_ebs\_optimized_** | _If true, the launched EC2 instance will be EBS-optimized_ | _boolean_ | **_Optional <br/> (Default - false)_** |
+| **_elastic\_inference\_accelerator_** | _Configuration block containing an Elastic <br/> Inference Accelerator to attach to the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_iam\_instance\_profile_** | _The IAM Instance Profile to launch the instance with_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_image\_id_** | _The AMI id_ | _string_ | **_Required_** |
+| **_instance\_initiated\_shutdown\_behavior_** | _Shutdown behavior for the instance_ | _string_ | **_Optional <br/> (Default - stop)_** |
+| **_instance\_market\_options_** | _The market (purchasing) option for the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_instance\_type_** | _The type of the instance_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_kernel\_id_** | _The kernel ID_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_key\_name_** | _The key name to use for the instance_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_license\_specification_** | _A list of license specifications to associate with_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_metadata\_options_** | _Customize the metadata options for the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_monitoring_** | _The monitoring option for the instance. <br/> See Monitoring below for more details_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_network\_interfaces_** | _Customize network interfaces to be <br/> attached at instance boot time_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_placement_** | _The placement of the instance_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_ram\_disk\_id_** | _The ID of the RAM disk_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_security\_group\_names_** | _A list of security group names to associate with_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_vpc\_security\_group\_ids_** | _A list of security group IDs to associate with_ | _list(string)_ | **_Optional <br/> (Default [])_** |
+| **_tag\_specifications_** | _The tags to apply to the resources during launch_  | _any_ | **_Optional <br/> (Default [])_** |
+| **_tags_** | _A mapping of tags to assign to the launch template_ | _map(string)_ | **_Optional <br/> (Default {})_** |
+| **_user\_data_** | _The Base64-encoded user data to provide when launching the instance_ | _string_ | **_Optional <br/> (Default null)_** |
+| **_hibernation\_options_** | _The hibernation options for the instance_ | _any_ | **_Optional <br/> (Default [])_** |
 
 
 ---
