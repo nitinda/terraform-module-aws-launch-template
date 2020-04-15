@@ -5,7 +5,7 @@ resource "aws_launch_template" "launch_template" {
   description = var.description
 
   dynamic "block_device_mappings" {
-    for_each = var.block_device_mappings
+    for_each = var.block_device_mappings == [] ? [] : [var.block_device_mappings]
     content {
       device_name  = lookup(block_device_mappings.value, "device_name", null)
       no_device    = lookup(block_device_mappings.value, "no_device", null)
@@ -73,7 +73,7 @@ resource "aws_launch_template" "launch_template" {
   }
 
   dynamic "iam_instance_profile" {
-    for_each = var.iam_instance_profile
+    for_each = var.iam_instance_profile == [] ? [] : [var.iam_instance_profile]
     content {
       arn  = lookup(iam_instance_profile.value, "arn", null)
       name = lookup(iam_instance_profile.value, "name", null)
