@@ -146,7 +146,7 @@ _The variables required in order for the module to be successfully called from t
 | **_ebs\_optimized_** | _If true, the launched instance will be EBS Optimized_ | _boolean_ | **_Optional_** | **_[]_** |
 | **_elastic\_gpu\_specifications_** | _The elastic GPU to attach to the instance_ | _boolean_ | **_Optional_** | **_[]_** |
 | **_elastic\_inference\_accelerator_** | _Configuration block containing an <br/>Elastic Inference Accelerator to attach to <br/>the instance_ | _any_ | **_Optional_** | **_[]_** |
-| **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _any_ | **_Optional_** | **_[]_** |
+| **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_image\_id_** | _The AMI id_ | _string_ | **_Required_** |
 | **_instance\_initiated\_shutdown\_behavior_** | _Shutdown behavior for the instance_ | _string_ | **_Optional_** | **_stop_** |
 | **_instance\_market\_options_** | _The market (purchasing) option for the instance_ | _any_ | **_Optional_** | **_[]_** |

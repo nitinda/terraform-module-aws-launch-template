@@ -64,7 +64,7 @@ variable "elastic_inference_accelerator" {
 
 variable "iam_instance_profile" {
   description = "The IAM Instance Profile to launch the instance with."
-  type        = any
+  type        = map(string)
   default     = {}
 }
 
