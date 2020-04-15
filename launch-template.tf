@@ -183,4 +183,8 @@ resource "aws_launch_template" "launch_template" {
       configured = hibernation_options.value.configured
     }
   }
+  
+  lifecycle {
+    create_before_destroy = true
+  }
 }
