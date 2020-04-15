@@ -5,7 +5,7 @@ resource "aws_launch_template" "launch_template" {
   description = var.description
 
   dynamic "block_device_mappings" {
-    for_each = var.block_device_mappings
+    for_each = var.block_device_mappings == {} ? [] : [var.block_device_mappings]
     content {
       device_name  = lookup(block_device_mappings.value, "device_name", null)
       no_device    = lookup(block_device_mappings.value, "no_device", null)
