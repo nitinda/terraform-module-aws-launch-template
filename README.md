@@ -47,7 +47,7 @@ _To use this module, add the following call to your code:_
 
 ```tf
 module "launch_template" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=terraform-12/master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-launch-template.git?ref=master"
 
   providers = {
     aws = aws.services
