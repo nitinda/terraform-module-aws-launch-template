@@ -163,7 +163,7 @@ _The variables required in order for the module to be successfully called from t
 | **_vpc\_security\_group\_ids_** | _A list of security group IDs to associate with_ | _list(string)_ | **_Optional_** | **_[]_** |
 | **_tag\_specifications_** | _The tags to apply to the resources during launch_  | _any_ | **_Optional_** | **_[]_** |
 | **_tags_** | _A mapping of tags to assign to the launch template_ | _map(string)_ | **_Optional_** | **_{}_** |
-| **_user\_data_** | _The Base64-encoded user data <br/> to provide when launching the instance_ | _string_ | **_Optional_** | **_[]_** |
+| **_user\_data_** | _The Base64-encoded user data <br/> to provide when launching the instance_ | _string_ | **_Optional_** | **_null_** |
 | **_hibernation\_options_** | _The hibernation options for the instance_ | _any_ | **_Optional_** | **_{}_** |
 
 
