@@ -65,7 +65,7 @@ variable "elastic_inference_accelerator" {
 variable "iam_instance_profile" {
   description = "The IAM Instance Profile to launch the instance with."
   type        = any
-  default     = []
+  default     = {}
 }
 
 variable "image_id" {
