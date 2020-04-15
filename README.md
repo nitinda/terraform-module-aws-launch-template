@@ -94,6 +94,7 @@ _The variables required in order for the module to be successfully called from t
 | **_credit\_specification_** | _Customize the credit specification of the instance_ | _any_ | **_Optional_** | **_[]_** |
 | **_disable\_api\_termination_** | _If true, enables EC2 Instance <br/> Termination Protection_ | _boolean_ | **_Optional_** | **_false_** |
 | **_ebs\_optimized_** | _If true, the launched instance will be EBS Optimized_ | _boolean_ | **_Optional_** | **_[]_** |
+| **_elastic\_gpu\_specifications_** | _The elastic GPU to attach to the instance_ | _boolean_ | **_Optional_** | **_[]_** |
 | **_elastic\_inference\_accelerator_** | _Configuration block containing an <br/>Elastic Inference Accelerator to attach to <br/>the instance_ | _any_ | **_Optional_** | **_[]_** |
 | **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _any_ | **_Optional_** | **_[]_** |
 | **_image\_id_** | _The AMI id_ | _string_ | **_Required_** |
