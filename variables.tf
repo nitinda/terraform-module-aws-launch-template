@@ -17,7 +17,7 @@ variable "description" {
 variable "block_device_mappings" {
   description = "Specify volumes to attach to the instance besides the volumes specified by the AMI."
   type        = any
-  default     = []
+  default     = {}
 }
 
 variable "capacity_reservation_specification" {
