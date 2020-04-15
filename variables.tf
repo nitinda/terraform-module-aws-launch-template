@@ -50,6 +50,12 @@ variable "ebs_optimized" {
   type        = bool
 }
 
+variable "elastic_gpu_specifications" {
+  description = "The elastic GPU to attach to the instance"
+  default     = []
+  type        = any
+}
+
 variable "elastic_inference_accelerator" {
   description = "Configuration block containing an Elastic Inference Accelerator to attach to the instance"
   default     = []
