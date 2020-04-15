@@ -22,20 +22,20 @@ variable "block_device_mappings" {
 
 variable "capacity_reservation_specification" {
   description = "Targeting for EC2 capacity reservations"
-  default     = []
+  default     = {}
   type        = any
 }
 
 variable "cpu_options" {
   description = "The CPU options for the instance"
-  default     = []
+  default     = {}
   type        = any
 }
 
 variable "credit_specification" {
   description = "Customize the credit specification of the instance"
-  default     = []
-  type        = any
+  default     = {}
+  type        = map(string)
 }
 
 variable "disable_api_termination" {
@@ -52,13 +52,13 @@ variable "ebs_optimized" {
 
 variable "elastic_gpu_specifications" {
   description = "The elastic GPU to attach to the instance"
-  default     = []
+  default     = {}
   type        = any
 }
 
 variable "elastic_inference_accelerator" {
   description = "Configuration block containing an Elastic Inference Accelerator to attach to the instance"
-  default     = []
+  default     = {}
   type        = any
 }
 
@@ -79,7 +79,7 @@ variable "instance_initiated_shutdown_behavior" {
 
 variable "instance_market_options" {
   description = "The market (purchasing) option for the instance"
-  default     = []
+  default     = {}
   type        = any
 }
 
@@ -100,32 +100,32 @@ variable "key_name" {
 
 variable "license_specification" {
   description = "A list of license specifications to associate with"
-  default     = []
-  type        = any
+  default     = {}
+  type        = map(string)
 }
 
 variable "metadata_options" {
   description = "Customize the metadata options for the instance"
-  default     = []
+  default     = {}
   type        = any
 }
 
 variable "monitoring" {
   description = "The monitoring option for the instance. See Monitoring below for more details."
-  type        = any
-  default     = []
+  type        = map(string)
+  default     = {}
 }
 
 variable "network_interfaces" {
   description = "Customize network interfaces to be attached at instance boot time"
   type        = any
-  default     = []
+  default     = {}
 }
 
 variable "placement" {
   description = "The placement of the instance"
   type        = any
-  default     = []
+  default     = {}
 }
 
 variable "ram_disk_id" {
@@ -165,5 +165,5 @@ variable "user_data" {
 variable "hibernation_options" {
   description = "The hibernation options for the instance"
   type        = any
-  default     = []
+  default     = {}
 }

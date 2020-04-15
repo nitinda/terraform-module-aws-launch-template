@@ -32,7 +32,7 @@ resource "aws_launch_template" "launch_template" {
       capacity_reservation_preference = lookup(capacity_reservation_specification.value, "capacity_reservation_preference", null)
 
       dynamic "capacity_reservation_target" {
-        for_each = lookup(capacity_reservation_specification.value, "capacity_reservation_target", [])
+        for_each = lookup(capacity_reservation_specification.value, "capacity_reservation_target", []) == [] ? [] : [lookup(capacity_reservation_specification.value, "capacity_reservation_target", [])]
         content {
           capacity_reservation_id = lookup(capacity_reservation_target.value, "capacity_reservation_id", null)
         }
@@ -90,7 +90,7 @@ resource "aws_launch_template" "launch_template" {
       market_type = lookup(instance_market_options.value, "market_type", null)
 
       dynamic "spot_options" {
-        for_each = lookup(instance_market_options.value, "spot_options", [])
+        for_each = lookup(instance_market_options.value, "spot_options", []) == [] ? [] : [lookup(instance_market_options.value, "spot_options", [])]
         content {
           block_duration_minutes         = lookup(spot_options.value, "block_duration_minutes", null)
           instance_interruption_behavior = lookup(spot_options.value, "instance_interruption_behavior", null)
