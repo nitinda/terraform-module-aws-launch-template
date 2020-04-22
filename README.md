@@ -136,17 +136,17 @@ _The variables required in order for the module to be successfully called from t
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
 |:----|:----|-----:|-----:|-----:|
 | **_name_** | _The name of the launch template_ | _string_ | **_Optional_** | **_null_** |
-| **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
+| **_name\_prefix_** | _Creates a unique name beginning with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
 | **_description_** | _Description of the launch template_ | _string_ | **_Optional_** | **_null_** |
-| **_block\_device\_mappings_** | _Specify volumes to attach to the instance besides <br/> the volumes specified by the AMI_ | _any_ | **_Optional_** | **_{}_** |
+| **_block\_device\_mappings_** | _Specify volumes to attach to the instance besides the volumes specified by the AMI_ | _any_ | **_Optional_** | **_{}_** |
 | **_capacity\_reservation\_specification_** | _Targeting for EC2 capacity reservations_ | _any_ | **_Optional_** | **_{}_** |
 | **_cpu\_options_** | _The CPU options for the instance | _any_ | **_Optional_** | **_{}_** |
 | **_credit\_specification_** | _Customize the credit specification of the instance_ | _map(string)_ | **_Optional_** | **_{}_** |
-| **_disable\_api\_termination_** | _If true, enables EC2 Instance <br/> Termination Protection_ | _boolean_ | **_Optional_** | **_false_** |
+| **_disable\_api\_termination_** | _If true, enables EC2 Instance Termination Protection_ | _boolean_ | **_Optional_** | **_false_** |
 | **_ebs\_optimized_** | _If true, the launched instance will be EBS Optimized_ | _boolean_ | **_Optional_** | **_[]_** |
 | **_elastic\_gpu\_specifications_** | _The elastic GPU to attach to the instance_ | _any_ | **_Optional_** | **_{}_** |
 | **_elastic\_inference\_accelerator_** | _Configuration block containing an <br/>Elastic Inference Accelerator to attach to <br/>the instance_ | _any_ | **_Optional_** | **_{}_** |
-| **_iam\_instance\_profile_** | _The IAM Instance Profile to <br/> launch the instance with_ | _map(string)_ | **_Optional_** | **_{}_** |
+| **_iam\_instance\_profile_** | _The IAM Instance Profile to launch the instance with_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_image\_id_** | _The AMI id_ | _string_ | **_Required_** |
 | **_instance\_initiated\_shutdown\_behavior_** | _Shutdown behavior for the instance_ | _string_ | **_Optional_** | **_stop_** |
 | **_instance\_market\_options_** | _The market (purchasing) option for the instance_ | _any_ | **_Optional_** | **_{}_** |
@@ -155,15 +155,15 @@ _The variables required in order for the module to be successfully called from t
 | **_key\_name_** | _The key name to use for the instance_ | _string_ | **_Optional_** | **_null_** |
 | **_license\_specification_** | _A list of license specifications to associate with_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_metadata\_options_** | _Customize the metadata options for the instance_ | _any_ | **_Optional_** | **_{}_** |
-| **_monitoring_** | _The monitoring option for the instance. <br/> See Monitoring below for more details_ | _map(string)_ | **_Optional_** | **_{}_** |
-| **_network\_interfaces_** | _Customize network interfaces to be <br/> attached at instance boot time_ | _any_ | **_Optional_** | **_{}_** |
+| **_monitoring_** | _The monitoring option for the instance. See Monitoring below for more details_ | _map(string)_ | **_Optional_** | **_{}_** |
+| **_network\_interfaces_** | _Customize network interfaces to be attached at instance boot time_ | _any_ | **_Optional_** | **_{}_** |
 | **_placement_** | _The placement of the instance_ | _any_ | **_Optional_** | **_{}_** |
 | **_ram\_disk\_id_** | _The ID of the RAM disk_ | _string_ | **_Optional_** | **_null_** |
 | **_security\_group\_names_** | _A list of security group names to associate with_ | _any_ | **_Optional_** | **_[]_** |
 | **_vpc\_security\_group\_ids_** | _A list of security group IDs to associate with_ | _list(string)_ | **_Optional_** | **_[]_** |
 | **_tag\_specifications_** | _The tags to apply to the resources during launch_  | _any_ | **_Optional_** | **_[]_** |
 | **_tags_** | _A mapping of tags to assign to the launch template_ | _map(string)_ | **_Optional_** | **_{}_** |
-| **_user\_data_** | _The Base64-encoded user data <br/> to provide when launching the instance_ | _string_ | **_Optional_** | **_null_** |
+| **_user\_data_** | _The Base64-encoded user data to provide when launching the instance_ | _string_ | **_Optional_** | **_null_** |
 | **_hibernation\_options_** | _The hibernation options for the instance_ | _any_ | **_Optional_** | **_{}_** |
 
 
