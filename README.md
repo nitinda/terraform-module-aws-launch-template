@@ -98,11 +98,15 @@ module "launch_template" {
   block_device_mappings = [
       {
           device_name = "/dev/sda1"
-          ebs = [
-              {
-                  volume_size = 20
-              }
-          ]
+          ebs = {
+            volume_size = 20
+          }
+      },
+      {
+          device_name = "/dev/sdf"
+          ebs = {
+            volume_size = 20
+          }
       }
   ]
 
